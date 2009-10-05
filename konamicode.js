@@ -20,4 +20,4 @@ Drupal.behaviors.konamicode = function() {
       }
     }, true);
   }
-}
+};
