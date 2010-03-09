@@ -69,19 +69,21 @@ Drupal.konamicode_imageattack = function() {
   // inside the window area and does not cause it to scroll.
   var width = $(window).width() - 175;
   var height = $(window).height() - 200;
-  var druplicon = Drupal.settings.konamicodeImage || 'http://drupalcode.org/viewvc/drupal/contributions/docs/marketing/logo/druplicon.small.png?view=co';
+  Drupal.konamicode_imageattackimages = Drupal.settings.konamicodeImages || ['http://drupalcode.org/viewvc/drupal/contributions/docs/marketing/logo/druplicon.small.png?view=co'];
+  // Select a random image.
   var max = 500;
   var count = 0;
-  konamiCodeSpawnImage(width, height, druplicon, max, count);
+  konamiCodeSpawnImage(width, height, max, count);
 };
 
 /**
  * Spawn an image randomly on the screen.
  */
-function konamiCodeSpawnImage(width, height, image, max, count) {
+function konamiCodeSpawnImage(width, height, max, count) {
   // Generate random location.
   var x = Math.floor(Math.random() * width);
   var y = Math.floor(Math.random() * height);
+  var image = Drupal.konamicode_imageattackimages[Math.floor(Math.random() * Drupal.konamicode_imageattackimages.length)];
 
   // Append Druplicon image tag to HTML body.
   $('body').append('<img src="' + image + '" style="position: absolute; z-index: 1000; left: ' + x + 'px; top: ' + y + 'px;"/>');
@@ -89,7 +91,7 @@ function konamiCodeSpawnImage(width, height, image, max, count) {
   
   // Queue another Druplicon.
   if (count < max) {
-    setTimeout('konamiCodeSpawnImage(' + width + ', ' + height + ', "' + image + '", ' + max + ', ' + count + ')', 10);
+    setTimeout('konamiCodeSpawnImage(' + width + ', ' + height + ', ' + max + ', ' + count + ')', 10);
   }
 }
 

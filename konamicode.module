@@ -103,7 +103,7 @@ function konamicode_konamicode_imageattack() {
   // Add the image only if it's not the default.
   $image = variable_get('konamicode_imageattack', 'http://drupalcode.org/viewvc/drupal/contributions/docs/marketing/logo/druplicon.small.png?view=co');
   if (!empty($image) && $image != 'http://drupalcode.org/viewvc/drupal/contributions/docs/marketing/logo/druplicon.small.png?view=co') {
-    drupal_add_js(array('konamicodeImage' => $image),'setting');
+    drupal_add_js(array('konamicodeImages' => explode("\n", $image)),'setting');
   }
 }
 

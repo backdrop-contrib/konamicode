@@ -53,10 +53,11 @@ function konamicode_admin_settings() {
  */
 function konamicode_konamicode_imageattack_settings() {
   $form['konamicode_imageattack'] = array(
-    '#title' => t('Image'),
-    '#type' => 'textfield',
-    '#description' => t('The absolute URL of the image to attack the user with.'),
+    '#title' => t('Images'),
+    '#type' => 'textarea',
+    '#description' => t('The absolute URL of the images to attack the user with. Each different image should be seperated by a line break.'),
     '#default_value' => variable_get('konamicode_imageattack', 'http://drupalcode.org/viewvc/drupal/contributions/docs/marketing/logo/druplicon.small.png?view=co'),
+    '#rows' => 2,
   );
   return $form;
 }
