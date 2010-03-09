@@ -18,35 +18,42 @@ function konamicode_help($path, $arg) {
  */
 function konamicode_init() {
   // Invoke all the enabled Konami Code actions.
-  $actions = variable_get('konamicode_actions', array('imageattack' => 'imageattack'));
+  $actions = array_filter(variable_get('konamicode_actions', array('imageattack' => 'imageattack')));
   $settings = array();
-  foreach ($actions as $action => $enabled) {
-    if ($enabled) {
-      // Add the jQuery Konami Code Plugin and the behavior.
-      static $added = FALSE;
-      if ($added == FALSE) {
-        drupal_add_js(drupal_get_path('module', 'konamicode') .'/konamicode.js');
-        $added = TRUE;
-      }
+  foreach ($actions as $action) {
+    // Add the jQuery Konami Code Plugin and the behavior.
+    static $added = FALSE;
+    if ($added == FALSE) {
+      drupal_add_js(drupal_get_path('module', 'konamicode') .'/konamicode.js');
+      $added = TRUE;
+    }
 
-      // Add the Konami Code Trigger setting if it's active.
-      $code = variable_get('konamicode_code_' . $action, '38,38,40,40,37,39,37,39,66,65');
-      if (!empty($code) && $code != '38,38,40,40,37,39,37,39,66,65') {
-        // Pass the sequence through as an integer array.
-        $sequence = array();
-        foreach (explode(',', $code) as $key) {
-          $sequence[] = intval($key);
+    // Add the Konami Code Trigger setting if it's active.
+    $code = variable_get('konamicode_code_' . $action, '38,38,40,40,37,39,37,39,66,65');
+    if (!empty($code) && $code != '38,38,40,40,37,39,37,39,66,65') {
+      // Pass the sequence through as an integer array.
+      $sequence = array();
+      foreach (explode(',', $code) as $key) {
+        $sequence[] = intval($key);
+      }
+      $settings['konamicode'][$action] = $sequence;
+    }
+    else {
+      // TRUE equates to the default Konami Code sequence. Image Attack is the
+      // default and doesn't need the boolean if it's all alone. This helps
+      // clean up Drupal.settings.
+      if (count($actions) == 1) {
+        if ($action != 'imageattack') {
+          $settings['konamicode'][$action] = TRUE;
         }
-        $settings['konamicode'][$action] = $sequence;
       }
       else {
-        // TRUE equates to the default Konami Code sequence.
         $settings['konamicode'][$action] = TRUE;
       }
-
-      // Invoke the chosen Konami Code action.
-      module_invoke_all('konamicode_' . $action);
     }
+
+    // Invoke the chosen Konami Code action.
+    module_invoke_all('konamicode_' . $action);
   }
 
   // Tell the JavaScript which actions are to be taken.

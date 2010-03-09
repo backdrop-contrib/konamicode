@@ -14,7 +14,11 @@ function konamicode_admin_settings() {
   $actions = module_invoke_all('konamicode');
 
   // Allow the user to choose which actions are active.
-  $enabled = variable_get('konamicode_actions', array('imageattack' => 'imageattack'));
+  $enabled = array_filter(variable_get('konamicode_actions', array()));
+  // The default requires at least Image Attack.
+  if (empty($enabled)) {
+    $enabled = array('imageattack' => 'imageattack');
+  }
   $form['konamicode_actions'] = array(
     '#type' => 'checkboxes',
     '#title' => t('Actions'),

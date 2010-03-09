@@ -48,8 +48,8 @@
  * Register the Konami Code action behavior.
  */
 Drupal.behaviors.konamicode = function(context) {
-  // Multiple actions can take place.
-  $.each(Drupal.settings.konamicode || {}, function(action, code) {
+  // Multiple actions can take place. It defaults to just Image Attack.
+  $.each(Drupal.settings.konamicode || {imageattack:true}, function(action, code) {
     var sequence = (code == true) ? [38, 38, 40, 40, 37, 39, 37, 39, 66, 65] : code;
     // Register the Konami Code event.
     $('body:not(.konamicode' + action + ')').addClass('konamicode' + action).each(function() {
