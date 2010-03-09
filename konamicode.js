@@ -105,4 +105,11 @@ Drupal.konamicode_redirect = function() {
  */
 Drupal.konamicode_alert = function() {
   alert(Drupal.settings.konamicodeAlert || Drupal.t('Konami Code is geek!'));
-}
+};
+
+/**
+ * The Flip Text Konami Code action.
+ */
+Drupal.konamicode_fliptext = function() {
+  $('body').fliptext();
+};

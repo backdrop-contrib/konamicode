@@ -85,6 +85,7 @@ function konamicode_konamicode() {
     'imageattack' => t('Image Attack'),
     'redirect' => t('Redirect'),
     'alert' => t('Alert'),
+    'fliptext' => t('Flip Text'),
   );
 }
 
@@ -119,4 +120,11 @@ function konamicode_konamicode_alert() {
   if (!empty($message) && $message != t('Konami Code is geek!')) {
     drupal_add_js(array('konamicodeAlert' => $message),'setting');
   }
+}
+
+/**
+ * Setup the Flip Text action.
+ */
+function konamicode_konamicode_fliptext() {
+  drupal_add_js(drupal_get_path('module', 'konamicode') . '/konamicode-fliptext.js');
 }
