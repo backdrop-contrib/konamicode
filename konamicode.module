@@ -34,7 +34,8 @@ function konamicode_init() {
       // Pass the sequence through as an integer array.
       $sequence = array();
       foreach (explode(',', $code) as $key) {
-        $sequence[] = intval($key);
+        $val = intval($key);
+        $sequence[] = $val == 0 ? ord(strtoupper($key)) : $val;
       }
       $settings['konamicode'][$action] = $sequence;
     }

@@ -34,7 +34,7 @@ function konamicode_admin_settings() {
       '#type' => 'textfield',
       '#title' => t('Key code sequence'),
       '#default_value' => variable_get('konamicode_code_' . $action, '38,38,40,40,37,39,37,39,66,65'),
-      '#description' => t('The <a href="@keycodes">JavaScript key code sequence</a> used to activate the %name action, seperated by commas. Defaults to the <a href="@konamicode">Konami Code</a>.', array('%name' => $name, '@konamicode' => 'http://en.wikipedia.org/wiki/Konami_code', '@keycodes' => 'http://www.cambiaresearch.com/c4/702b8cd1-e5b0-42e6-83ac-25f0306e3e25/javascript-char-codes-key-codes.aspx')),
+      '#description' => t('The <a href="@keycodes">key code sequence</a> used to activate the %name action, seperated by commas. Provide either the key code integer, or the character of the key. Defaults to the <a href="@konamicode">Konami Code</a>. Some examples are: "<em>38,38,40,40,37,39,37,39,66,65</em>", "<em>g,o,d</em>", "<em>n,o,c,l,i,p</em>", etc.', array('%name' => $name, '@konamicode' => 'http://en.wikipedia.org/wiki/Konami_code', '@keycodes' => 'http://www.cambiaresearch.com/c4/702b8cd1-e5b0-42e6-83ac-25f0306e3e25/javascript-char-codes-key-codes.aspx')),
       '#weight' => -9,
     );
     $form['konamicode_action_' . $action] = array_merge($settings, array(
