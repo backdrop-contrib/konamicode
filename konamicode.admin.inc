@@ -43,7 +43,7 @@ function konamicode_admin_settings() {
       '#type' => 'fieldset',
       '#title' => $name,
       '#collapsible' => TRUE,
-      '#collapsed' => isset($enabled[$action]) ? $enabed[$action] == $enabled[$action] : TRUE,
+      '#collapsed' => !isset($enabled[$action]),
     ));
   }
   return system_settings_form($form);
