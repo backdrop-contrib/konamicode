@@ -19,6 +19,8 @@ function konamicode_admin_settings() {
   if (empty($enabled)) {
     $enabled = array('imageattack' => 'imageattack');
   }
+
+  // Construct the settings form.
   $form['konamicode_actions'] = array(
     '#type' => 'checkboxes',
     '#title' => t('Actions'),
@@ -47,9 +49,8 @@ function konamicode_admin_settings() {
   return system_settings_form($form);
 }
 
-
 /**
- * Settings for the Konami Code Image Attack action.
+ * Implementation of hook_konamicode_IMAGEATTACK_settings().
  */
 function konamicode_konamicode_imageattack_settings() {
   $form['konamicode_imageattack'] = array(
@@ -63,7 +64,7 @@ function konamicode_konamicode_imageattack_settings() {
 }
 
 /**
- * Settings for the Konami Code Redirect action.
+ * Implementation of hook_konamicode_REDIRECT_settings().
  */
 function konamicode_konamicode_redirect_settings() {
   $form['konamicode_destination'] = array(
@@ -76,7 +77,7 @@ function konamicode_konamicode_redirect_settings() {
 }
 
 /**
- * Settings for the Konami Code Alert action.
+ * Implementation of hook_konamicode_ALERT_settings().
  */
 function konamicode_konamicode_alert_settings() {
   $form['konamicode_alert'] = array(

@@ -42,10 +42,10 @@ function hook_konamicode_ACTION_settings() {
 
 /**
  * JavaScript code in konamicode-redirect.js is as follows:
- *
  * Replace ACTION with the name of your action.
  *
-Drupal.konamicode_ACTION = function() {
-  window.location = 'http://bacolicio.us/' + window.location;
-};
-*/
+ * Drupal.konamicode_ACTION = function() {
+ *   window.location = 'http://bacolicio.us/' + window.location;
+ * };
+ *
+ */

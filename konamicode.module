@@ -98,7 +98,7 @@ function konamicode_konamicode() {
 }
 
 /**
- * Setup the Konami Code Image Attack action.
+ * Implementation of hook_konamicode_IMAGEATTACK().
  */
 function konamicode_konamicode_imageattack() {
   // Add the image only if it's not the default.
@@ -109,7 +109,7 @@ function konamicode_konamicode_imageattack() {
 }
 
 /**
- * Setup the Konami Code Redirect action.
+ * Implementation of hook_konamicode_REDIRECT().
  */
 function konamicode_konamicode_redirect() {
   // Add the destination only if it's not the default.
@@ -120,7 +120,7 @@ function konamicode_konamicode_redirect() {
 }
 
 /**
- * Setup the Konami Code Alert action.
+ * Implementation of hook_konamicode_ALERT().
  */
 function konamicode_konamicode_alert() {
   // Add the message only if it's not the default.
@@ -131,7 +131,7 @@ function konamicode_konamicode_alert() {
 }
 
 /**
- * Setup the Flip Text action.
+ * Implementation of hook_konamicode_FLIPTEXT().
  */
 function konamicode_konamicode_fliptext() {
   drupal_add_js(drupal_get_path('module', 'konamicode') . '/konamicode-fliptext.js');
