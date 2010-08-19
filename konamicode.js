@@ -130,3 +130,12 @@ Drupal.konamicode_alert = function() {
 Drupal.konamicode_fliptext = function() {
   $('body').fliptext();
 };
+
+/**
+ * The Cornify Konami Code action.
+ */
+Drupal.konamicode_cornify = function() {
+  $.getScript('http://www.cornify.com/js/cornify.js', function(data, textStatus) {
+    cornify_add();
+  });
+}

@@ -1,4 +1,4 @@
 ; $Id$
 name = Konami Code
-description = Redirects the user to a special page when they enter the Konami Code.
+description = Performs special actions when the user enters the Konami Code.
 core = 6.x

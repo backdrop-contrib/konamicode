@@ -94,6 +94,7 @@ function konamicode_konamicode() {
     'redirect' => t('Redirect'),
     'alert' => t('Alert'),
     'fliptext' => t('Flip Text'),
+    'cornify' => t('Cornify'),
   );
 }
 
