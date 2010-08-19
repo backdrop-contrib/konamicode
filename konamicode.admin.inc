@@ -88,3 +88,22 @@ function konamicode_konamicode_alert_settings() {
   );
   return $form;
 }
+
+/**
+ * Implementation of hook_konamicode_GEOCITIESIZER_settings().
+ */
+function konamicode_konamicode_geocitiesizer_settings() {
+  $form['konamicode_geocitiesizer_theme'] = array(
+    '#type' => 'select',
+    '#title' => t('Theme'),
+    '#description' => t('The theme to use when Geocities-izing.'),
+    '#default_value' => variable_get('konamicode_geocitiesizer_theme', 0),
+    '#options' => array(
+      0 => t('Random'),
+      1 => t('Yellow'),
+      2 => t('Tech'),
+      3 => t('Space'),
+    ),
+  );
+  return $form;
+}

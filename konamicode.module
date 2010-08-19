@@ -95,6 +95,7 @@ function konamicode_konamicode() {
     'alert' => t('Alert'),
     'fliptext' => t('Flip Text'),
     'cornify' => t('Cornify'),
+    'geocitiesizer' => t('Geocities-izer'),
   );
 }
 
@@ -127,7 +128,7 @@ function konamicode_konamicode_alert() {
   // Add the message only if it's not the default.
   $message = variable_get('konamicode_alert', t('Konami Code is geek!'));
   if (!empty($message) && $message != t('Konami Code is geek!')) {
-    drupal_add_js(array('konamicodeAlert' => $message),'setting');
+    drupal_add_js(array('konamicodeAlert' => $message), 'setting');
   }
 }
 
@@ -136,4 +137,14 @@ function konamicode_konamicode_alert() {
  */
 function konamicode_konamicode_fliptext() {
   drupal_add_js(drupal_get_path('module', 'konamicode') . '/konamicode-fliptext.js');
+}
+
+/**
+ * Implementation of hook_konamicode_GEOCITIESIZER().
+ */
+function konamicode_konamicode_geocitiesizer() {
+  $theme = variable_get('konamicode_geocitiesizer_theme', 0);
+  if ($theme != 0) {
+    drupal_add_js(array('konamicodeGeo' => $theme), 'setting');
+  }
 }

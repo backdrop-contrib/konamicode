@@ -139,3 +139,17 @@ Drupal.konamicode_cornify = function() {
     cornify_add();
   });
 }
+
+/**
+ * The Geocities-izer Konami Code action.
+ */
+Drupal.konamicode_geocitiesizer = function() {
+  var theme = Drupal.settings.konamicodeGeo || 0;
+  if (theme != 0) {
+    theme = '&theme=' + theme;
+  }
+  else {
+    theme = '';
+  }
+  window.location = 'http://wonder-tonic.com/geocitiesizer/content.php?url=' + window.location + theme;
+}
