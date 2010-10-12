@@ -60,6 +60,13 @@ function konamicode_konamicode_imageattack_settings() {
     '#default_value' => variable_get('konamicode_imageattack', 'http://drupalcode.org/viewvc/drupal/contributions/docs/marketing/logo/druplicon.small.png?view=co'),
     '#rows' => 2,
   );
+  $form['konamicode_imageattackmax'] = array(
+    '#title' => t('Amount of images'),
+    '#type' => 'textfield',
+    '#description' => t('Number of images to appear on the screen during an attack.'),
+    '#default_value' => variable_get('konamicode_imageattackmax', 500),
+    '#size' => 5,
+  );
   return $form;
 }
 

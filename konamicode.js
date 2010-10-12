@@ -86,7 +86,7 @@ Drupal.konamicode_imageattack = function() {
   var height = $(document).height() - 200;
   Drupal.konamicode_imageattackimages = Drupal.settings.konamicodeImages || ['http://drupalcode.org/viewvc/drupal/contributions/docs/marketing/logo/druplicon.small.png?view=co'];
   // Select a random image.
-  var max = 500;
+  var max = Drupal.settings.konamicodeImagesMax || 500;
   var count = 0;
   konamiCodeSpawnImage(width, height, max, count);
 };

@@ -108,6 +108,14 @@ function konamicode_konamicode_imageattack() {
   if (!empty($image) && $image != 'http://drupalcode.org/viewvc/drupal/contributions/docs/marketing/logo/druplicon.small.png?view=co') {
     drupal_add_js(array('konamicodeImages' => explode("\n", $image)),'setting');
   }
+  // Amount of images to display during an attack.
+  $max = variable_get('konamicode_imageattackmax', 500);
+  if (!empty($max) && is_numeric($max)) {
+    $max = (int)$max;
+    if ($max > 0 && $max != 500) {
+      drupal_add_js(array('konamicodeImagesMax' => $max),'setting');
+    }
+  }
 }
 
 /**
