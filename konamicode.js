@@ -62,18 +62,20 @@
 /**
  * Register the Konami Code action behavior.
  */
-Drupal.behaviors.konamicode = function(context) {
-  // Multiple actions can take place. It defaults to just Image Attack.
-  $.each(Drupal.settings.konamicode || {imageattack:true}, function(action, code) {
-    var sequence = (code == true) ? [38, 38, 40, 40, 37, 39, 37, 39, 66, 65] : code;
-    // Register the Konami Code event.
-    $('body:not(.konamicode' + action + ')').addClass('konamicode' + action).each(function() {
-      $.konami(function() {
-        // Activate the event.
-        Drupal['konamicode_' + action]();
-      }, sequence);
+Drupal.behaviors.konamicode = {
+  attach: function (context, settings) {
+    // Multiple actions can take place. It defaults to just Image Attack.
+    jQuery.each(settings.konamicode || {imageattack:true}, function(action, code) {
+      var sequence = (code == true) ? [38, 38, 40, 40, 37, 39, 37, 39, 66, 65] : code;
+      // Register the Konami Code event.
+      jQuery('body').once('konamicode' + action, function() {
+        jQuery.konami(function() {
+          // Activate the event.
+          Drupal['konamicode_' + action]();
+        }, sequence);
+      });
     });
-  });
+  }
 };
 
 /**
@@ -82,8 +84,8 @@ Drupal.behaviors.konamicode = function(context) {
 Drupal.konamicode_imageattack = function() {
   // Subtract Druplicon width and height to ensure that he is only spawned
   // inside the window area and does not cause it to scroll.
-  var width = $(document).width() - 175;
-  var height = $(document).height() - 200;
+  var width = jQuery(document).width() - 175;
+  var height = jQuery(document).height() - 200;
   Drupal.konamicode_imageattackimages = Drupal.settings.konamicodeImages || ['http://drupalcode.org/viewvc/drupal/contributions/docs/marketing/logo/druplicon.small.png?view=co'];
   // Select a random image.
   var max = Drupal.settings.konamicodeImagesMax || 500;
@@ -101,7 +103,7 @@ function konamiCodeSpawnImage(width, height, max, count) {
   var image = Drupal.konamicode_imageattackimages[Math.floor(Math.random() * Drupal.konamicode_imageattackimages.length)];
 
   // Append Druplicon image tag to HTML body.
-  $('body').append('<img src="' + image + '" style="position: absolute; z-index: 1000; left: ' + x + 'px; top: ' + y + 'px;"/>');
+  jQuery('body').append('<img src="' + image + '" style="position: absolute; z-index: 1000; left: ' + x + 'px; top: ' + y + 'px;"/>');
   count++;
   
   // Queue another Druplicon.
@@ -128,17 +130,17 @@ Drupal.konamicode_alert = function() {
  * The Flip Text Konami Code action.
  */
 Drupal.konamicode_fliptext = function() {
-  $('body').fliptext();
+  jQuery('body').fliptext();
 };
 
 /**
  * The Cornify Konami Code action.
  */
 Drupal.konamicode_cornify = function() {
-  $.getScript('http://www.cornify.com/js/cornify.js', function(data, textStatus) {
+  jQuery.getScript('http://www.cornify.com/js/cornify.js', function(data, textStatus) {
     cornify_add();
   });
-}
+};
 
 /**
  * The Geocities-izer Konami Code action.
@@ -152,4 +154,4 @@ Drupal.konamicode_geocitiesizer = function() {
     theme = '';
   }
   window.location = 'http://wonder-tonic.com/geocitiesizer/content.php?url=' + window.location + theme;
-}
+};

@@ -9,7 +9,7 @@
 /**
  * Menu callback; The administration settings for the Konami Code.
  */
-function konamicode_admin_settings() {
+function konamicode_admin_settings($form, &$form_state) {
   // Retrieve all available Konami Actions.
   $actions = module_invoke_all('konamicode');
 
@@ -43,14 +43,16 @@ function konamicode_admin_settings() {
       '#type' => 'fieldset',
       '#title' => $name,
       '#collapsible' => TRUE,
-      '#collapsed' => !isset($enabled[$action]),
+      '#states' => array(
+        'invisible' => array("input[value=$action]" => array('checked' => FALSE)),
+      ),
     ));
   }
   return system_settings_form($form);
 }
 
 /**
- * Implementation of hook_konamicode_IMAGEATTACK_settings().
+ * Implements hook_konamicode_IMAGEATTACK_settings().
  */
 function konamicode_konamicode_imageattack_settings() {
   $form['konamicode_imageattack'] = array(
@@ -71,7 +73,7 @@ function konamicode_konamicode_imageattack_settings() {
 }
 
 /**
- * Implementation of hook_konamicode_REDIRECT_settings().
+ * Implements hook_konamicode_REDIRECT_settings().
  */
 function konamicode_konamicode_redirect_settings() {
   $form['konamicode_destination'] = array(
@@ -84,7 +86,7 @@ function konamicode_konamicode_redirect_settings() {
 }
 
 /**
- * Implementation of hook_konamicode_ALERT_settings().
+ * Implements hook_konamicode_ALERT_settings().
  */
 function konamicode_konamicode_alert_settings() {
   $form['konamicode_alert'] = array(
@@ -97,7 +99,7 @@ function konamicode_konamicode_alert_settings() {
 }
 
 /**
- * Implementation of hook_konamicode_GEOCITIESIZER_settings().
+ * Implements hook_konamicode_GEOCITIESIZER_settings().
  */
 function konamicode_konamicode_geocitiesizer_settings() {
   $form['konamicode_geocitiesizer_theme'] = array(
