@@ -70,6 +70,7 @@ function konamicode_permission() {
   return array(
     'administer konamicode' => array(
       'title' => t('Administer Konami Code'),
+      'description' => t('Change which actions are taken when certain codes on the site are entered.'),
     ),
   );
 }

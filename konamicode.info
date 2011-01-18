@@ -6,3 +6,5 @@ core = 7.x
 files[] = konamicode.admin.inc
 files[] = konamicode.install
 files[] = konamicode.module
+
+configure = admin/config/system/konamicode
