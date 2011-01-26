@@ -101,6 +101,7 @@ function konamicode_konamicode() {
     'fliptext' => t('Flip Text'),
     'cornify' => t('Cornify'),
     'geocitiesizer' => t('Geocities-izer'),
+    'astroids' => t('Astroids'),
   );
 }
 

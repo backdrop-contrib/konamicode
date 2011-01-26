@@ -4,19 +4,19 @@
  * Konami Code jQuery Plugin
  * Author: Rob Loach
  *
- *            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE 
- *                    Version 2, December 2004 
+ *            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+ *                    Version 2, December 2004
  *
- * Copyright (C) 2004 Sam Hocevar <sam@hocevar.net> 
+ * Copyright (C) 2004 Sam Hocevar <sam@hocevar.net>
  *
- * Everyone is permitted to copy and distribute verbatim or modified 
- * copies of this license document, and changing it is allowed as long 
- * as the name is changed. 
+ * Everyone is permitted to copy and distribute verbatim or modified
+ * copies of this license document, and changing it is allowed as long
+ * as the name is changed.
  *
- *            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE 
- *   TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION 
+ *            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+ *   TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
  *
- * 0. You just DO WHAT THE FUCK YOU WANT TO. 
+ * 0. You just DO WHAT THE FUCK YOU WANT TO.
  */
 (function($) {
   var konamiListeners = [];
@@ -105,7 +105,7 @@ function konamiCodeSpawnImage(width, height, max, count) {
   // Append Druplicon image tag to HTML body.
   jQuery('body').append('<img src="' + image + '" style="position: absolute; z-index: 1000; left: ' + x + 'px; top: ' + y + 'px;"/>');
   count++;
-  
+
   // Queue another Druplicon.
   if (count < max) {
     setTimeout('konamiCodeSpawnImage(' + width + ', ' + height + ', ' + max + ', ' + count + ')', 10);
@@ -155,3 +155,10 @@ Drupal.konamicode_geocitiesizer = function() {
   }
   window.location = 'http://wonder-tonic.com/geocitiesizer/content.php?url=' + window.location + theme;
 };
+
+/**
+ * The Astroids Konami Code action.
+ */
+Drupal.konamicode_astroids = function() {
+  jQuery.getScript('http://erkie.github.com/asteroids.min.js');
+}
