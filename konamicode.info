@@ -1,4 +1,3 @@
-; $Id$
 name = Konami Code
 description = Performs special actions when the user enters the Konami Code.
 core = 7.x

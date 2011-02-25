@@ -1,4 +1,3 @@
-/* $Id$ */
 
 /**
  * Konami Code jQuery Plugin

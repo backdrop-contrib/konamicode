@@ -1,5 +1,4 @@
 <?php
-// $Id$
 
 /**
  * Describes all the Konami Code actions available.
