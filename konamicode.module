@@ -1,4 +1,8 @@
 <?php
+/**
+ * @file
+ * The Konami Code Drupal module
+ */
 
 /**
  * Implements hook_help().

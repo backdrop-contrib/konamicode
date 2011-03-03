@@ -1,4 +1,3 @@
-
 /**
  * Konami Code jQuery Plugin
  * Author: Rob Loach

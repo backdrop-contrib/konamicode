@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * Provides the uninstall hook for the Konami Code module.

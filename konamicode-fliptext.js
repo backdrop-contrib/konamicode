@@ -1,6 +1,8 @@
-// flip upside down text 
-// more detail : http://paulirish.com/2009/flip-text-upside-down-jquery-plugin/
-
+/**
+ * @file
+ * flip upside down text 
+ * more detail : http://paulirish.com/2009/flip-text-upside-down-jquery-plugin/
+ */
 
 // source: http://s.ytimg.com/yt/js/april_fools-vfl84826.js
 // demo:   http://www.youtube.com/watch?v=xadS1NpPsPM&flip=1

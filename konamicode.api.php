@@ -1,4 +1,8 @@
 <?php
+/**
+ * @file
+ * API for the Konami Code Drupal module
+ */
 
 /**
  * Describes all the Konami Code actions available.

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * Provides the administration settings for the Konami Code module.
