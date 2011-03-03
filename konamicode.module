@@ -97,10 +97,21 @@ function konamicode_konamicode() {
     'imageattack' => t('Image Attack'),
     'redirect' => t('Redirect'),
     'alert' => t('Alert'),
+
+    // http://paulirish.com/2009/flip-text-upside-down-jquery-plugin/
     'fliptext' => t('Flip Text'),
+
+    // http://www.cornify.com
     'cornify' => t('Cornify'),
+
+    // http://wonder-tonic.com/geocitiesizer/
     'geocitiesizer' => t('Geocities-izer'),
+
+    // http://erkie.github.com
     'astroids' => t('Astroids'),
+
+    // https://github.com/lsemel/jquery-placekitten
+    'placekitten' => t('Placekitten'),
   );
 }
 
@@ -161,3 +172,4 @@ function konamicode_konamicode_geocitiesizer() {
     drupal_add_js(array('konamicodeGeo' => $theme), array('type' => 'setting', 'scope' => JS_DEFAULT));
   }
 }
+

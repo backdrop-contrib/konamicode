@@ -160,4 +160,16 @@ Drupal.konamicode_geocitiesizer = function() {
  */
 Drupal.konamicode_astroids = function() {
   jQuery.getScript('http://erkie.github.com/asteroids.min.js');
-}
+};
+
+/**
+ * The Place Kitten Konami Code action.
+ */
+Drupal.konamicode_placekitten = function() {
+  jQuery('img').each(function() {
+    var w = jQuery(this).width();
+    var h = jQuery(this).height();
+    jQuery(this).attr('src', 'http://placekitten.com/' + w + '/' + h);
+  });
+};
+
