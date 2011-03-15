@@ -172,3 +172,10 @@ Drupal.konamicode_placekitten = function() {
   });
 };
 
+/**
+ * The Katamari Hack Konami Code action.
+ */
+Drupal.konamicode_katamari = function() {
+  jQuery.getScript('http://kathack.com/js/kh.js');
+};
+

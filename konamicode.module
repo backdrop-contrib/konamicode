@@ -116,6 +116,9 @@ function konamicode_konamicode() {
 
     // https://github.com/lsemel/jquery-placekitten
     'placekitten' => t('Placekitten'),
+
+    // http://kathack.com
+    'katamari' => t('Katamari Hack'),
   );
 }
 
