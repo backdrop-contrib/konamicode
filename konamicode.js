@@ -84,7 +84,7 @@ Drupal.konamicode_imageattack = function() {
   // inside the window area and does not cause it to scroll.
   var width = jQuery(document).width() - 175;
   var height = jQuery(document).height() - 200;
-  Drupal.konamicode_imageattackimages = Drupal.settings.konamicodeImages || ['http://drupalcode.org/viewvc/drupal/contributions/docs/marketing/logo/druplicon.small.png?view=co'];
+  Drupal.konamicode_imageattackimages = Drupal.settings.konamicodeImages || ['http://drupal.org/files/druplicon.small_.png'];
   // Select a random image.
   var max = Drupal.settings.konamicodeImagesMax || 500;
   var count = 0;
