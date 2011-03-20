@@ -155,9 +155,9 @@ Drupal.konamicode_geocitiesizer = function() {
 };
 
 /**
- * The Astroids Konami Code action.
+ * The Asteroids Konami Code action.
  */
-Drupal.konamicode_astroids = function() {
+Drupal.konamicode_asteroids = function() {
   jQuery.getScript('http://erkie.github.com/asteroids.min.js');
 };
 

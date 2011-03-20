@@ -112,7 +112,7 @@ function konamicode_konamicode() {
     'geocitiesizer' => t('Geocities-izer'),
 
     // http://erkie.github.com
-    'astroids' => t('Astroids'),
+    'asteroids' => t('Asteroids'),
 
     // https://github.com/lsemel/jquery-placekitten
     'placekitten' => t('Placekitten'),
