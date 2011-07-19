@@ -173,6 +173,20 @@ Drupal.konamicode_placekitten = function() {
 };
 
 /**
+ * The Raptorize Konami Code action.
+ */
+Drupal.konamicode_raptorize = function() {
+  // Load the Raptorize plugin via jQuery.
+  jQuery.getScript(Drupal.settings.konamicodeR + '/raptorize/jquery.raptorize.1.0.js', function() {
+    // Display the Raptor's wrath.
+    jQuery('body').raptorize({
+      'enterOn': 'timer',
+      'delayTime': 50
+    });
+  });
+};
+
+/**
  * The Katamari Hack Konami Code action.
  */
 Drupal.konamicode_katamari = function() {
