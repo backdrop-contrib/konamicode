@@ -25,10 +25,22 @@ function konamicode_admin_settings($form, &$form_state) {
     '#description' => t('Which actions should be enabled.'),
     '#options' => $actions,
     '#default_value' => $enabled,
+    '#attached' => array(
+      'css' => array(
+        drupal_get_path('module', 'konamicode') . '/konamicode.admin.css' => array(),
+      ),
+      'js' => array(
+        drupal_get_path('module', 'konamicode') . '/konamicode.admin.js' => array(),
+      ),
+    ),
+  );
+  $form['konamicode_settings'] = array(
+    '#type' => 'vertical_tabs',
   );
 
   // Settings for each individual action.
   foreach ($actions as $action => $name) {
+    // Assemble the settings for the action.
     $settings = module_invoke_all('konamicode_' . $action . '_settings');
     $settings['konamicode_code_' . $action] = array(
       '#type' => 'textfield',
@@ -41,13 +53,18 @@ function konamicode_admin_settings($form, &$form_state) {
       )),
       '#weight' => -9,
     );
+
+    // Add the demonstration capabilities.
+    module_invoke_all('konamicode_' . $action);
+
+    // Stick all the settings in a fieldset.
     $form['konamicode_action_' . $action] = array_merge($settings, array(
       '#type' => 'fieldset',
       '#title' => $name,
+      '#description' => t('Settings associated with the %name action. This will only be used if you have it enabled above.', array('%name' => $name)),
       '#collapsible' => TRUE,
-      '#states' => array(
-        'invisible' => array("input[value=$action]" => array('checked' => FALSE)),
-      ),
+      '#group' => 'konamicode_settings',
+      '#attributes' => array('data-konamicodeaction' => $action),
     ));
   }
   return system_settings_form($form);
