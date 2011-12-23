@@ -194,7 +194,7 @@ Drupal.konamicode_katamari = function() {
 };
 
 /**
- * The Katamari Hack Konami Code action.
+ * The Snowfall Konami Code action.
  */
 Drupal.konamicode_snowfall = function() {
   // Load the Snowfall jQuery plugin.
