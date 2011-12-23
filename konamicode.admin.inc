@@ -135,3 +135,54 @@ function konamicode_konamicode_geocitiesizer_settings() {
   );
   return $form;
 }
+
+/**
+ * Implements hook_konamicode_SNOWFALL_settings().
+ */
+function konamicode_konamicode_snowfall_settings() {
+  $form['konamicode_snowfall_flakecount'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Flake Count'),
+    '#description' => t('The amount of flakes to display.'),
+    '#default_value' => variable_get('konamicode_snowfall_flakecount', '200'),
+  );
+  $form['konamicode_snowfall_flakecolor'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Flake Color'),
+    '#description' => t('The HTML color code of which to display the snowflakes.'),
+    '#default_value' => variable_get('konamicode_snowfall_flakecolor', '#FFFFFF'),
+  );
+  $form['konamicode_snowfall_minsize'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Minimum Size'),
+    '#default_value' => variable_get('konamicode_snowfall_minsize', '2'),
+  );
+  $form['konamicode_snowfall_maxsize'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Maximum Size'),
+    '#default_value' => variable_get('konamicode_snowfall_maxsize', '5'),
+  );
+  $form['konamicode_snowfall_minspeed'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Minimum Speed'),
+    '#default_value' => variable_get('konamicode_snowfall_minspeed', '1'),
+  );
+  $form['konamicode_snowfall_maxspeed'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Maximum Speed'),
+    '#default_value' => variable_get('konamicode_snowfall_maxspeed', '5'),
+  );
+  $form['konamicode_snowfall_round'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Round'),
+    '#description' => t('Makes the snowflakes rounded if the browser supports it.'),
+    '#default_value' => variable_get('konamicode_snowfall_round', TRUE),
+  );
+  $form['konamicode_snowfall_shadow'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Shadow'),
+    '#description' => t('Gives the snowflakes a shadow if the browser supports it.'),
+    '#default_value' => variable_get('konamicode_snowfall_shadow', TRUE),
+  );
+  return $form;
+}

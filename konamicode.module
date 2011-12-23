@@ -122,6 +122,9 @@ function konamicode_konamicode() {
 
     // http://kathack.com
     'katamari' => t('Katamari Hack'),
+
+    // https://github.com/loktar00/JQuery-Snowfall
+    'snowfall' => t('Snowfall'),
   );
 }
 
@@ -189,6 +192,26 @@ function konamicode_konamicode_geocitiesizer() {
 function konamicode_konamicode_raptorize() {
   $settings = array(
     'konamicodeR' => base_path() . drupal_get_path('module', 'konamicode'),
+  );
+  drupal_add_js($settings, array('type' => 'setting', 'scope' => JS_DEFAULT));
+}
+
+/**
+ * Implements hook_konamicode_SNOWFALL().
+ */
+function konamicode_konamicode_snowfall() {
+  $settings = array(
+    'snowfall' => array(
+      'path' => drupal_get_path('module', 'konamicode'),
+      'flakeCount' => (int)variable_get('konamicode_snowfall_flakecount', '200'),
+      'flakeColor' => variable_get('konamicode_snowfall_flakecolor', '#ffffff'),
+      'minSize' => (int)variable_get('konamicode_snowfall_minsize', '2'),
+      'maxSize' => (int)variable_get('konamicode_snowfall_maxsize', '5'),
+      'minSpeed' => (int)variable_get('konamicode_snowfall_minspeed', '1'),
+      'maxSpeed' => (int)variable_get('konamicode_snowfall_maxspeed', '5'),
+      'round' => variable_get('konamicode_snowfall_round', TRUE),
+      'shadow' => variable_get('konamicode_snowfall_shadow', TRUE),
+    ),
   );
   drupal_add_js($settings, array('type' => 'setting', 'scope' => JS_DEFAULT));
 }

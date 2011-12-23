@@ -193,3 +193,15 @@ Drupal.konamicode_katamari = function() {
   jQuery.getScript('http://kathack.com/js/kh.js');
 };
 
+/**
+ * The Katamari Hack Konami Code action.
+ */
+Drupal.konamicode_snowfall = function() {
+  // Load the Snowfall jQuery plugin.
+  var path = Drupal.settings.basePath + Drupal.settings.snowfall.path + '/snowfall/snowfall.jquery.js';
+  jQuery.getScript(path, function() {
+    // Invoke the plugin on the document object.
+    jQuery(document).snowfall(Drupal.settings.snowfall);
+  });
+};
+
