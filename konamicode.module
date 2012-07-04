@@ -125,6 +125,9 @@ function konamicode_konamicode() {
 
     // https://github.com/loktar00/JQuery-Snowfall
     'snowfall' => t('Snowfall'),
+
+    // http://www.youtube.com/watch?v=y1x_jq1YTBA
+    'gg' => t('GG'),
   );
 }
 
@@ -216,3 +219,12 @@ function konamicode_konamicode_snowfall() {
   drupal_add_js($settings, array('type' => 'setting', 'scope' => JS_DEFAULT));
 }
 
+/**
+ * Implements hook_konamicode_GG().
+ */
+function konamicode_konamicode_gg() {
+  $settings = array(
+    'gg' => drupal_get_path('module', 'konamicode'),
+  );
+  drupal_add_js($settings, array('type' => 'setting', 'scope' => JS_DEFAULT));
+}

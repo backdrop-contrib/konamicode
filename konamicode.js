@@ -205,3 +205,20 @@ Drupal.konamicode_snowfall = function() {
   });
 };
 
+/**
+ * The Snowfall Konami Code action.
+ */
+Drupal.konamicode_gg = function() {
+  // Only add the Konami Code GG once.
+  if (jQuery('#konamicode-gg').length == 0) {
+    var path = Drupal.settings.basePath + Drupal.settings.gg + '/gg/gg.';
+    var extension = ['ogg', 'mp3', 'wav'];
+    var markup = '<audio id="konamicode-gg" preload="auto">';
+    for (var i = 0; i < 3; i++) {
+      markup = markup + '<source src="' + path + extension[i] + '" />';
+    }
+    markup = markup + '</audio>';
+    jQuery('body').append(markup);
+  }
+  jQuery('#konamicode-gg')[0].play();
+};
