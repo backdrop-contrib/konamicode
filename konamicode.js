@@ -222,3 +222,15 @@ Drupal.konamicode_gg = function() {
   }
   jQuery('#konamicode-gg')[0].play();
 };
+
+/**
+ * The Browser Ponies Code action.
+ */
+Drupal.konamicode_browserponies = function() {
+  (function (config) {
+    BrowserPonies.setBaseUrl(Drupal.settings.browserponies.baseurl);
+    BrowserPonies.loadConfig(BrowserPoniesBaseConfig);
+    BrowserPonies.loadConfig(config);
+  })
+  (Drupal.settings.browserponies);
+};

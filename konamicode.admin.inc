@@ -186,3 +186,122 @@ function konamicode_konamicode_snowfall_settings() {
   );
   return $form;
 }
+
+/**
+ * Implements hook_konamicode_BROWSERPONIES_settings().
+ */
+function konamicode_konamicode_browserponies_settings() {
+  $form['konamicode_browserponies_baseurl'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Base URL'),
+    '#description' => t('Base URL of the Browser Ponies files'),
+    '#default_value' => variable_get('konamicode_browserponies_baseurl', 'http://panzi.github.io/Browser-Ponies'),
+    '#required' => TRUE,
+  );
+
+  $form['konamicode_browserponies_showLoadProgress'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Show Download Progress Bar'),
+    '#default_value' => variable_get('konamicode_browserponies_showLoadProgress', true),
+  );
+
+  $form['konamicode_browserponies_fadeDuration'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Fade Duration'),
+    '#description' => t('Amount of time in milliseconds for the ponies to appear on the screen'),
+    '#default_value' => variable_get('konamicode_browserponies_fadeDuration', 500),
+    '#required' => TRUE,
+  );
+
+  $form['konamicode_browserponies_audioEnabled'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Enable audio if browser supports HTML 5 Audio'),
+    '#default_value' => variable_get('konamicode_browserponies_audioEnabled', false),
+  );
+
+  $form['konamicode_browserponies_volume'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Audio Volume'),
+    '#description' => t('Enter a value between 0 and 1 (eg. 0.1, 0.2, etc)'),
+    '#default_value' => variable_get('konamicode_browserponies_volume', 1),
+  );
+
+  $form['konamicode_browserponies_fps'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Frames Per Second'),
+    '#description' => t('The lower the number, the better the performance'),
+    '#default_value' => variable_get('konamicode_browserponies_fps', 25),
+    '#required' => TRUE,
+  );
+
+  $form['konamicode_browserponies_showFps'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Show Frames per Second'),
+    '#default_value' => variable_get('konamicode_browserponies_showFps', false),
+  );
+
+  $form['konamicode_browserponies_speed'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Speed Multiplier'),
+    '#description' => t('How fast are these ponies going?'),
+    '#default_value' => variable_get('konamicode_browserponies_speed', 3),
+    '#required' => TRUE,
+  );
+
+  $form['konamicode_browserponies_speakProbability'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Random Speak Probability'),
+    '#description' => t('Enter a value between 0 and 1 (eg. 0.1, 0.2, etc)'),
+    '#default_value' => variable_get('konamicode_browserponies_speakProbability', 0.1),
+    '#required' => TRUE,
+  );
+
+  $form['konamicode_browserponies_applejack'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Applejack'),
+    '#description' => t('Enter the number of Applejack ponies on the screen'),
+    '#default_value' => variable_get('konamicode_browserponies_applejack', 1),
+    '#required' => TRUE,
+  );
+
+  $form['konamicode_browserponies_fluttershy'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Fluttershy'),
+    '#description' => t('Enter the number of Fluttershy ponies on the screen'),
+    '#default_value' => variable_get('konamicode_browserponies_fluttershy', 1),
+    '#required' => TRUE,
+  );
+
+  $form['konamicode_browserponies_pinkiepie'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Pinkiepie'),
+    '#description' => t('Enter the number of Pinkiepie ponies on the screen'),
+    '#default_value' => variable_get('konamicode_browserponies_pinkiepie', 1),
+    '#required' => TRUE,
+  );
+
+  $form['konamicode_browserponies_rainbowdash'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Rainbowdash'),
+    '#description' => t('Enter the number of Rainbowdash ponies on the screen'),
+    '#default_value' => variable_get('konamicode_browserponies_rainbowdash', 1),
+    '#required' => TRUE,
+  );
+
+  $form['konamicode_browserponies_rarity'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Rarity'),
+    '#description' => t('Enter the number of Rarity ponies on the screen'),
+    '#default_value' => variable_get('konamicode_browserponies_rarity', 1),
+    '#required' => TRUE,
+  );
+
+  $form['konamicode_browserponies_twilightsparkle'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Twilight Sparkle'),
+    '#description' => t('Enter the number of Twilight Sparkle ponies on the screen'),
+    '#default_value' => variable_get('konamicode_browserponies_twilightsparkle', 1),
+    '#required' => TRUE,
+  );
+  return $form;
+}

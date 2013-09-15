@@ -128,6 +128,9 @@ function konamicode_konamicode() {
 
     // http://www.youtube.com/watch?v=y1x_jq1YTBA
     'gg' => t('GG'),
+    
+    // https://github.com/panzi/Browser-Ponies
+    'browserponies' => t('Browser Ponies'),
   );
 }
 
@@ -227,4 +230,38 @@ function konamicode_konamicode_gg() {
     'gg' => drupal_get_path('module', 'konamicode'),
   );
   drupal_add_js($settings, array('type' => 'setting', 'scope' => JS_DEFAULT));
+}
+
+/**
+ * Implements hook_konamicode_BROWSERPONIES().
+ */
+function konamicode_konamicode_browserponies() {
+  global $base_url;
+  $path = variable_get('konamicode_browserponies_baseurl', 'http://panzi.github.io/Browser-Ponies');
+  $settings = array(
+    'browserponies' => array(
+      'browserponies' => drupal_get_path('module', 'konamicode'),
+      'baseurl' => $path . '/',
+      'fadeDuration' => (int)variable_get('konamicode_browserponies_fadeDuration', 500),
+      'volume' => (int)variable_get('konamicode_browserponies_volume', 1),
+      'fps' => (int)variable_get('konamicode_browserponies_fps', 25),
+      'speed' => (int)variable_get('konamicode_browserponies_speed', 3),
+      'audioEnabled' => variable_get('konamicode_browserponies_audioEnabled', false),
+      'showFps' => variable_get('konamicode_browserponies_showFps', false),
+      'showLoadProgress' => variable_get('konamicode_browserponies_showLoadProgress', true),
+      'speakProbability' => (int)variable_get('konamicode_browserponies_speakProbability', 0.1),
+      'spawn' => array(
+        'applejack' => (int)variable_get('konamicode_browserponies_applejack', 1),
+        'fluttershy' => (int)variable_get('konamicode_browserponies_fluttershy', 1),
+        'pinkie pie' => (int)variable_get('konamicode_browserponies_pinkiepie', 1),
+        'rainbow dash' => (int)variable_get('konamicode_browserponies_rainbowdash', 1),
+        'rarity' => (int)variable_get('konamicode_browserponies_rarity', 1),
+        'twilight sparkle' => (int)variable_get('konamicode_browserponies_twilightsparkle', 1),
+      ),
+      'autostart' => variable_get('konamicode_browserponies_autostart', true),
+    ),
+  );
+  drupal_add_js($settings, array('type' => 'setting', 'scope' => JS_DEFAULT));
+  drupal_add_js($path . '/basecfg.js', 'file');  
+  drupal_add_js($path . '/browserponies.js', 'file');
 }
