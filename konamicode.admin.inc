@@ -78,7 +78,7 @@ function konamicode_konamicode_imageattack_settings() {
     '#title' => t('Images'),
     '#type' => 'textarea',
     '#description' => t('The absolute URL of the images to attack the user with. Each different image should be seperated by a line break.'),
-    '#default_value' => variable_get('konamicode_imageattack', 'http://drupal.org/files/druplicon.small_.png'),
+    '#default_value' => variable_get('konamicode_imageattack', 'http://drupal.org/files/druplicon-small.png'),
     '#rows' => 2,
   );
   $form['konamicode_imageattackmax'] = array(

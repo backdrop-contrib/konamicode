@@ -139,8 +139,8 @@ function konamicode_konamicode() {
  */
 function konamicode_konamicode_imageattack() {
   // Add the image only if it's not the default.
-  $image = variable_get('konamicode_imageattack', 'http://drupal.org/files/druplicon.small_.png');
-  if (!empty($image) && $image != 'http://drupal.org/files/druplicon.small_.png') {
+  $image = variable_get('konamicode_imageattack', 'http://drupal.org/files/druplicon-small.png');
+  if (!empty($image) && $image != 'http://drupal.org/files/druplicon-small.png') {
     drupal_add_js(array('konamicodeImages' => explode("\n", $image)), array('type' => 'setting', 'scope' => JS_DEFAULT));
   }
   // Amount of images to display during an attack.
