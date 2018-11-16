@@ -66,7 +66,7 @@ Drupal.konamicode_imageattack = function() {
   // inside the window area and does not cause it to scroll.
   var width = jQuery(document).width() - 175;
   var height = jQuery(document).height() - 200;
-  Drupal.konamicode_imageattackimages = Drupal.settings.konamicodeImages || ['http://drupal.org/files/druplicon-small.png'];
+  Drupal.konamicode_imageattackimages = Drupal.settings.konamicodeImages || ['https://drupal.org/files/druplicon-small.png'];
   // Select a random image.
   var max = Drupal.settings.konamicodeImagesMax || 500;
   var count = 0;
@@ -96,14 +96,14 @@ function konamiCodeSpawnImage(width, height, max, count) {
  * The Redirect Konami Code action.
  */
 Drupal.konamicode_redirect = function() {
-  window.location = Drupal.settings.konamicodeDestination || 'http://bacolicio.us/' + window.location;
+  window.location = Drupal.settings.konamicodeDestination || 'https://youtu.be/dQw4w9WgXcQ';
 };
 
 /**
  * The Alert Konami Code action.
  */
 Drupal.konamicode_alert = function() {
-  alert(Drupal.settings.konamicodeAlert || Drupal.t('Konami Code is geek!'));
+  alert(Drupal.settings.konamicodeAlert || Drupal.t('Konami Code Is Geek!'));
 };
 
 /**
@@ -117,7 +117,7 @@ Drupal.konamicode_fliptext = function() {
  * The Cornify Konami Code action.
  */
 Drupal.konamicode_cornify = function() {
-  jQuery.getScript('http://www.cornify.com/js/cornify.js', function(data, textStatus) {
+  jQuery.getScript('https://www.cornify.com/js/cornify.js', function(data, textStatus) {
     cornify_add();
   });
 };
@@ -127,20 +127,20 @@ Drupal.konamicode_cornify = function() {
  */
 Drupal.konamicode_geocitiesizer = function() {
   var theme = Drupal.settings.konamicodeGeo || 0;
-  if (theme != 0) {
+  if (theme !== 0) {
     theme = '&theme=' + theme;
   }
   else {
     theme = '';
   }
-  window.location = 'http://wonder-tonic.com/geocitiesizer/content.php?url=' + window.location + theme;
+  window.location = 'https://wonder-tonic.com/geocitiesizer/content.php?url=' + window.location + theme;
 };
 
 /**
  * The Asteroids Konami Code action.
  */
 Drupal.konamicode_asteroids = function() {
-  jQuery.getScript('http://erkie.github.com/asteroids.min.js');
+  jQuery.getScript('https://erkie.github.com/asteroids.min.js');
 };
 
 /**
@@ -150,7 +150,7 @@ Drupal.konamicode_placekitten = function() {
   jQuery('img').each(function() {
     var w = jQuery(this).width();
     var h = jQuery(this).height();
-    jQuery(this).attr('src', 'http://placekitten.com/' + w + '/' + h);
+    jQuery(this).attr('src', 'https://placekitten.com/' + w + '/' + h);
   });
 };
 
@@ -172,7 +172,8 @@ Drupal.konamicode_raptorize = function() {
  * The Katamari Hack Konami Code action.
  */
 Drupal.konamicode_katamari = function() {
-  jQuery.getScript('http://kathack.com/js/kh.js');
+  //jQuery.getScript('http://kathack.com/js/kh.js');
+  jQuery.getScript('https://cdn.jsdelivr.net/gh/seancron/kathack/kh.js');
 };
 
 /**

@@ -48,8 +48,8 @@ function konamicode_admin_settings($form, &$form_state) {
       '#default_value' => variable_get('konamicode_code_' . $action, '38,38,40,40,37,39,37,39,66,65'),
       '#description' => t('The <a href="@keycodes">key code sequence</a> used to activate the %name action, seperated by commas. Provide either the key code integer, or the character of the key. Defaults to the <a href="@konamicode">Konami Code</a>. Some examples are: "<em>38,38,40,40,37,39,37,39,66,65</em>", "<em>g,o,d</em>", "<em>n,o,c,l,i,p</em>", etc.', array(
         '%name' => $name,
-        '@konamicode' => 'http://en.wikipedia.org/wiki/Konami_code',
-        '@keycodes' => 'http://www.cambiaresearch.com/c4/702b8cd1-e5b0-42e6-83ac-25f0306e3e25/javascript-char-codes-key-codes.aspx',
+        '@konamicode' => 'https://www.drupal.org/docs/8/modules/konami-code/general-information-and-history',
+        '@keycodes' => 'https://www.drupal.org/docs/8/modules/konami-code/configuring-key-code-sequence',
       )),
       '#weight' => -9,
     );
@@ -78,7 +78,7 @@ function konamicode_konamicode_imageattack_settings() {
     '#title' => t('Images'),
     '#type' => 'textarea',
     '#description' => t('The absolute URL of the images to attack the user with. Each different image should be seperated by a line break.'),
-    '#default_value' => variable_get('konamicode_imageattack', 'http://drupal.org/files/druplicon-small.png'),
+    '#default_value' => variable_get('konamicode_imageattack', 'https://drupal.org/files/druplicon-small.png'),
     '#rows' => 2,
   );
   $form['konamicode_imageattackmax'] = array(
@@ -98,8 +98,8 @@ function konamicode_konamicode_redirect_settings() {
   $form['konamicode_destination'] = array(
     '#type' => 'textfield',
     '#title' => t('Destination'),
-    '#description' => t('When people enter the <a href="@konamicode">Konami Code</a>, redirect them to the given URL. This can either be an internal or external path.', array('@konamicode' => 'http://en.wikipedia.org/wiki/Konami_code')),
-    '#default_value' => variable_get('konamicode_destination', 'http://bacolicio.us/http://' . $_SERVER['SERVER_NAME'] . base_path()),
+    '#description' => t('When people enter the <a href="@konamicode">Konami Code</a>, redirect them to the given URL. This can either be an internal or external path.', array('@konamicode' => 'https://www.drupal.org/docs/8/modules/konami-code/general-information-and-history')),
+    '#default_value' => variable_get('konamicode_destination', 'https://youtu.be/dQw4w9WgXcQ'),
   );
   return $form;
 }
@@ -112,7 +112,7 @@ function konamicode_konamicode_alert_settings() {
     '#type' => 'textfield',
     '#title' => t('Text'),
     '#description' => t('The text to display to the user.'),
-    '#default_value' => variable_get('konamicode_alert', t('Konami Code is geek!')),
+    '#default_value' => variable_get('konamicode_alert', t('Konami Code Is Geek!')),
   );
   return $form;
 }
@@ -195,7 +195,7 @@ function konamicode_konamicode_browserponies_settings() {
     '#type' => 'textfield',
     '#title' => t('Base URL'),
     '#description' => t('Base URL of the Browser Ponies files'),
-    '#default_value' => variable_get('konamicode_browserponies_baseurl', 'http://panzi.github.io/Browser-Ponies'),
+    '#default_value' => variable_get('konamicode_browserponies_baseurl', 'https://panzi.github.io/Browser-Ponies'),
     '#required' => TRUE,
   );
 
