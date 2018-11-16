@@ -133,14 +133,15 @@ Drupal.konamicode_geocitiesizer = function() {
   else {
     theme = '';
   }
-  window.location = 'https://wonder-tonic.com/geocitiesizer/content.php?url=' + window.location + theme;
+  window.location = 'http://wonder-tonic.com/geocitiesizer/content.php?url=' + window.location + theme;
 };
 
 /**
  * The Asteroids Konami Code action.
  */
 Drupal.konamicode_asteroids = function() {
-  jQuery.getScript('https://erkie.github.com/asteroids.min.js');
+  // Or: https://cdn.jsdelivr.net/gh/erkie/erkie.github.com/asteroids.js.
+  jQuery.getScript('https://hi.kickassapp.com/kickass.js');
 };
 
 /**

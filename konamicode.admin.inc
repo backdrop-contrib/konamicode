@@ -121,6 +121,11 @@ function konamicode_konamicode_alert_settings() {
  * Implements hook_konamicode_GEOCITIESIZER_settings().
  */
 function konamicode_konamicode_geocitiesizer_settings() {
+  $form['konamicode_geocitiesizer_info'] = array(
+    '#markup' => t('NOTE: This is a very old action relying on an external HTTP site. This will not work on sites using https.'),
+    '#weight' => -10,
+  );
+
   $form['konamicode_geocitiesizer_theme'] = array(
     '#type' => 'select',
     '#title' => t('Theme'),
