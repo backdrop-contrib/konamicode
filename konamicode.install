@@ -13,3 +13,109 @@ function konamicode_uninstall() {
     ->condition('name', "konamicode_%", 'LIKE')
     ->execute();
 }
+
+
+/**
+ * Migrate konamicode variables to Backdrop CMS configuration.
+ */
+function konamicode_update_1000() {
+  // Get the configuration object for Konami Code.
+  $config = config('konamicode.settings');
+
+  // General settings.
+  $config->set('konamicode_enabled', (bool) update_variable_get('konamicode_enabled', 0));
+  $config->set('konamicode_actions__active_tab', '');
+
+  // Image Spawn action.
+  $config->set('konamicode_imageSpawn_enabled', (bool) update_variable_get('konamicode_imageattack_enabled', 0));
+  $config->set('konamicode_imageSpawn_keycode_sequence', update_variable_get('konamicode_imageattack_keycode_sequence', '38,38,40,40,37,39,37,39,66,65'));
+  $config->set('konamicode_imageSpawn_images', update_variable_get('konamicode_imageattack', 'https://backdropcms.org/files/inline-images/Drop.png'));
+  $config->set('konamicode_imageSpawnmax', update_variable_get('konamicode_imageattackmax', '500'));
+
+  // Redirect action.
+  $config->set('konamicode_redirect_enabled', (bool) update_variable_get('konamicode_redirect_enabled', 0));
+  $config->set('konamicode_redirect_keycode_sequence', update_variable_get('konamicode_redirect_keycode_sequence', '38,38,40,40,37,39,37,39,66,65'));
+  $config->set('konamicode_redirect_destination', update_variable_get('konamicode_destination', 'https://youtu.be/dQw4w9WgXcQ'));
+
+  // Alert action.
+  $config->set('konamicode_alert_enabled', (bool) update_variable_get('konamicode_alert_enabled', 0));
+  $config->set('konamicode_alert_keycode_sequence', update_variable_get('konamicode_alert_keycode_sequence', '38,38,40,40,37,39,37,39,66,65'));
+  $config->set('konamicode_alert_message', update_variable_get('konamicode_alert', 'Konami Code Is Geek!'));
+
+  // Replace Images action.
+  $config->set('konamicode_replaceImages_enabled', (bool) update_variable_get('konamicode_replace_images_enabled', 0));
+  $config->set('konamicode_replaceImages_keycode_sequence', update_variable_get('konamicode_replace_images_keycode_sequence', '38,38,40,40,37,39,37,39,66,65'));
+  $config->set('konamicode_replaceImages_integrations', [
+    'bacon' => update_variable_get('konamicode_replace_images_bacon', 0),
+    'baby' => update_variable_get('konamicode_replace_images_baby', 0),
+    'bear' => update_variable_get('konamicode_replace_images_bear', 0),
+    'beer' => update_variable_get('konamicode_replace_images_beer', 0),
+    'nicolas_cage' => update_variable_get('konamicode_replace_images_cage', 0),
+    'geese' => update_variable_get('konamicode_replace_images_geese', 0),
+    'cats' => update_variable_get('konamicode_replace_images_kitten', 0), // PlaceKitten changed to PlaceCats.
+    'lorem_picsum' => update_variable_get('konamicode_replace_images_picsum', 0),
+    'lorem_pixel' => update_variable_get('konamicode_replace_images_pixel', 0),
+  ]);
+
+  // Snowfall action.
+  $config->set('konamicode_snowfall_enabled', (bool) update_variable_get('konamicode_snowfall_enabled', 0));
+  $config->set('konamicode_snowfall_keycode_sequence', update_variable_get('konamicode_snowfall_keycode_sequence', '38,38,40,40,37,39,37,39,66,65'));
+  $config->set('konamicode_snowfall_flake_count', update_variable_get('konamicode_snowfall_flakecount', '35'));
+  $config->set('konamicode_snowfall_flake_color', update_variable_get('konamicode_snowfall_flakecolor', '#ffffff'));
+  $config->set('konamicode_snowfall_minsize', update_variable_get('konamicode_snowfall_minsize', '2'));
+  $config->set('konamicode_snowfall_maxsize', update_variable_get('konamicode_snowfall_maxsize', '5'));
+  $config->set('konamicode_snowfall_minspeed', update_variable_get('konamicode_snowfall_minspeed', '1'));
+  $config->set('konamicode_snowfall_maxspeed', update_variable_get('konamicode_snowfall_maxspeed', '5'));
+  $config->set('konamicode_snowfall_round', (bool) update_variable_get('konamicode_snowfall_round', 1));
+  $config->set('konamicode_snowfall_shadow', (bool) update_variable_get('konamicode_snowfall_shadow', 1));
+
+  // GG action.
+  $config->set('konamicode_gg_enabled', (bool) update_variable_get('konamicode_gg_enabled', 0));
+  $config->set('konamicode_redirect_gg_sequence', update_variable_get('konamicode_gg_keycode_sequence', '38,38,40,40,37,39,37,39,66,65'));
+
+  // Browser Ponies action.
+  $config->set('konamicode_browserponies_enabled', (bool) update_variable_get('konamicode_browserponies_enabled', 0));
+  $config->set('konamicode_browserponies_keycode_sequence', update_variable_get('konamicode_browserponies_keycode_sequence', '38,38,40,40,37,39,37,39,66,65'));
+  $config->set('konamicode_browserponies_baseurl', update_variable_get('konamicode_browserponies_baseurl', 'https://panzi.github.io/Browser-Ponies'));
+  $config->set('konamicode_browserponies_showLoadProgress', (bool) update_variable_get('konamicode_browserponies_showLoadProgress', 1));
+  $config->set('konamicode_browserponies_fadeDuration', update_variable_get('konamicode_browserponies_fadeDuration', '500'));
+  $config->set('konamicode_browserponies_audioEnabled', (bool) update_variable_get('konamicode_browserponies_audioEnabled', 0));
+  $config->set('konamicode_browserponies_volume', update_variable_get('konamicode_browserponies_volume', '1'));
+  $config->set('konamicode_browserponies_fps', update_variable_get('konamicode_browserponies_fps', '25'));
+  $config->set('konamicode_browserponies_showFps', (bool) update_variable_get('konamicode_browserponies_showFps', 0));
+  $config->set('konamicode_browserponies_speed', update_variable_get('konamicode_browserponies_speed', '3'));
+  $config->set('konamicode_browserponies_speakProbability', update_variable_get('konamicode_browserponies_speakProbability', '0.1'));
+  $config->set('konamicode_browserponies_applejack', update_variable_get('konamicode_browserponies_applejack', '1'));
+  $config->set('konamicode_browserponies_fluttershy', update_variable_get('konamicode_browserponies_fluttershy', '1'));
+  $config->set('konamicode_browserponies_pinkiepie', update_variable_get('konamicode_browserponies_pinkiepie', '1'));
+  $config->set('konamicode_browserponies_rainbowdash', update_variable_get('konamicode_browserponies_rainbowdash', '1'));
+  $config->set('konamicode_browserponies_rarity', update_variable_get('konamicode_browserponies_rarity', '1'));
+  $config->set('konamicode_browserponies_twilightsparkle', update_variable_get('konamicode_browserponies_twilightsparkle', '1'));
+
+  // Save the configuration.
+  $config->save();
+
+  // Delete old variables.
+  $variables_to_delete = [
+    'konamicode_enabled',
+    'konamicode_imageattack_enabled',
+    'konamicode_imageattack_keycode_sequence',
+    'konamicode_imageattack',
+    // Add other variables here...
+  ];
+  foreach ($variables_to_delete as $variable) {
+    update_variable_del($variable);
+  }
+}
+
+
+/**
+ * Implements hook_install().
+ */
+function konamicode_install() {
+  // Dynamically generated variable data was detected.
+  // /konamicode/konamicode.module line 24
+  // /konamicode/konamicode.module line 35
+  // /konamicode/konamicode.module line 172
+  // /konamicode/konamicode.module line 252
+}

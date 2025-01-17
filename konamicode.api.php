@@ -23,7 +23,7 @@ function hook_konamicode() {
  * Replace ACTION with the name of the Konami Code action.
  */
 function hook_konamicode_ACTION() {
-  drupal_add_js(drupal_get_path('module', 'konamicode') . '/konamicode-redirect.js');
+  backdrop_add_js(backdrop_get_path('module', 'konamicode') . '/konamicode-redirect.js');
 }
 
 /**

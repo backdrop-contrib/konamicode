@@ -1,9 +1,6 @@
 name = Konami Code
 description = Performs special actions when the user enters the Konami Code.
-core = 7.x
-
-files[] = konamicode.admin.inc
-files[] = konamicode.install
-files[] = konamicode.module
+backdrop = 1.x
+type = module
 
 configure = admin/config/system/konamicode
