@@ -45,8 +45,8 @@ function konamicode_admin_settings($form, &$form_state) {
       '',
     '#description' => t('The <a href="@keycodes">key code sequence</a> used to activate the %name action, seperated by commas. Provide either the key code integer, or the character of the key. Defaults to the <a href="@konamicode">Konami Code</a>. Some examples are: "<em>38,38,40,40,37,39,37,39,66,65</em>", "<em>g,o,d</em>", "<em>n,o,c,l,i,p</em>", etc.', array(
       '%name' => $name,
-      '@konamicode' => 'https://www.drupal.org/docs/8/modules/konami-code/general-information-and-history',
-      '@keycodes' => 'https://www.drupal.org/docs/8/modules/konami-code/configuring-key-code-sequence',
+      '@konamicode' => 'https://github.com/backdrop-contrib/konamicode/wiki/General-Information-and-History',
+      '@keycodes' => 'https://github.com/backdrop-contrib/konamicode/wiki/Configuring-Key-Code-Sequence',
     )),
   ];
   $form['imageSpawn']['konamicode_imageSpawn_images'] = [
@@ -83,8 +83,8 @@ function konamicode_admin_settings($form, &$form_state) {
     '',
     '#description' => t('The <a href="@keycodes">key code sequence</a> used to activate the %name action, seperated by commas. Provide either the key code integer, or the character of the key. Defaults to the <a href="@konamicode">Konami Code</a>. Some examples are: "<em>38,38,40,40,37,39,37,39,66,65</em>", "<em>g,o,d</em>", "<em>n,o,c,l,i,p</em>", etc.', array(
       '%name' => $name,
-      '@konamicode' => 'https://www.drupal.org/docs/8/modules/konami-code/general-information-and-history',
-      '@keycodes' => 'https://www.drupal.org/docs/8/modules/konami-code/configuring-key-code-sequence',
+      '@konamicode' => 'https://github.com/backdrop-contrib/konamicode/wiki/General-Information-and-History',
+      '@keycodes' => 'https://github.com/backdrop-contrib/konamicode/wiki/Configuring-Key-Code-Sequence',
     )),
   ];
   $form['redirect']['konamicode_redirect_destination'] = [
@@ -112,8 +112,8 @@ function konamicode_admin_settings($form, &$form_state) {
     '#default_value' => config_get('konamicode.settings', 'konamicode_alert_keycode_sequence') ?? '',
     '#description' => t('The <a href="@keycodes">key code sequence</a> used to activate the %name action, seperated by commas. Provide either the key code integer, or the character of the key. Defaults to the <a href="@konamicode">Konami Code</a>. Some examples are: "<em>38,38,40,40,37,39,37,39,66,65</em>", "<em>g,o,d</em>", "<em>n,o,c,l,i,p</em>", etc.', array(
       '%name' => $name,
-      '@konamicode' => 'https://www.drupal.org/docs/8/modules/konami-code/general-information-and-history',
-      '@keycodes' => 'https://www.drupal.org/docs/8/modules/konami-code/configuring-key-code-sequence',
+      '@konamicode' => 'https://github.com/backdrop-contrib/konamicode/wiki/General-Information-and-History',
+      '@keycodes' => 'https://github.com/backdrop-contrib/konamicode/wiki/Configuring-Key-Code-Sequence',
     )),
   ];
   $form['alert']['konamicode_alert_message'] = [
@@ -142,8 +142,8 @@ function konamicode_admin_settings($form, &$form_state) {
     '',
     '#description' => t('The <a href="@keycodes">key code sequence</a> used to activate the %name action, seperated by commas. Provide either the key code integer, or the character of the key. Defaults to the <a href="@konamicode">Konami Code</a>. Some examples are: "<em>38,38,40,40,37,39,37,39,66,65</em>", "<em>g,o,d</em>", "<em>n,o,c,l,i,p</em>", etc.', array(
       '%name' => $name,
-      '@konamicode' => 'https://www.drupal.org/docs/8/modules/konami-code/general-information-and-history',
-      '@keycodes' => 'https://www.drupal.org/docs/8/modules/konami-code/configuring-key-code-sequence',
+      '@konamicode' => 'https://github.com/backdrop-contrib/konamicode/wiki/General-Information-and-History',
+      '@keycodes' => 'https://github.com/backdrop-contrib/konamicode/wiki/Configuring-Key-Code-Sequence',
     )),
   ];
 
@@ -165,8 +165,8 @@ function konamicode_admin_settings($form, &$form_state) {
     '#default_value' => config_get('konamicode.settings', 'konamicode_cornify_keycode_sequence') ?? '',
     '#description' => t('The <a href="@keycodes">key code sequence</a> used to activate the %name action, seperated by commas. Provide either the key code integer, or the character of the key. Defaults to the <a href="@konamicode">Konami Code</a>. Some examples are: "<em>38,38,40,40,37,39,37,39,66,65</em>", "<em>g,o,d</em>", "<em>n,o,c,l,i,p</em>", etc.', array(
       '%name' => $name,
-      '@konamicode' => 'https://www.drupal.org/docs/8/modules/konami-code/general-information-and-history',
-      '@keycodes' => 'https://www.drupal.org/docs/8/modules/konami-code/configuring-key-code-sequence',
+      '@konamicode' => 'https://github.com/backdrop-contrib/konamicode/wiki/General-Information-and-History',
+      '@keycodes' => 'https://github.com/backdrop-contrib/konamicode/wiki/Configuring-Key-Code-Sequence',
     )),
   ];
 
@@ -188,8 +188,8 @@ function konamicode_admin_settings($form, &$form_state) {
     '#default_value' => config_get('konamicode.settings', 'konamicode_geocitiesizer_keycode_sequence') ?? '',
     '#description' => t('The <a href="@keycodes">key code sequence</a> used to activate the %name action, seperated by commas. Provide either the key code integer, or the character of the key. Defaults to the <a href="@konamicode">Konami Code</a>. Some examples are: "<em>38,38,40,40,37,39,37,39,66,65</em>", "<em>g,o,d</em>", "<em>n,o,c,l,i,p</em>", etc.', array(
       '%name' => $name,
-      '@konamicode' => 'https://www.drupal.org/docs/8/modules/konami-code/general-information-and-history',
-      '@keycodes' => 'https://www.drupal.org/docs/8/modules/konami-code/configuring-key-code-sequence',
+      '@konamicode' => 'https://github.com/backdrop-contrib/konamicode/wiki/General-Information-and-History',
+      '@keycodes' => 'https://github.com/backdrop-contrib/konamicode/wiki/Configuring-Key-Code-Sequence',
     )),
   ];
   $form['geocitiesizer']['konamicode_geocitiesizer_theme'] = [
@@ -224,8 +224,8 @@ function konamicode_admin_settings($form, &$form_state) {
     ?? '',
     '#description' => t('The <a href="@keycodes">key code sequence</a> used to activate the %name action, seperated by commas. Provide either the key code integer, or the character of the key. Defaults to the <a href="@konamicode">Konami Code</a>. Some examples are: "<em>38,38,40,40,37,39,37,39,66,65</em>", "<em>g,o,d</em>", "<em>n,o,c,l,i,p</em>", etc.', array(
       '%name' => $name,
-      '@konamicode' => 'https://www.drupal.org/docs/8/modules/konami-code/general-information-and-history',
-      '@keycodes' => 'https://www.drupal.org/docs/8/modules/konami-code/configuring-key-code-sequence',
+      '@konamicode' => 'https://github.com/backdrop-contrib/konamicode/wiki/General-Information-and-History',
+      '@keycodes' => 'https://github.com/backdrop-contrib/konamicode/wiki/Configuring-Key-Code-Sequence',
     )),
   ];
 
@@ -248,8 +248,8 @@ function konamicode_admin_settings($form, &$form_state) {
     ?? '',
     '#description' => t('The <a href="@keycodes">key code sequence</a> used to activate the %name action, seperated by commas. Provide either the key code integer, or the character of the key. Defaults to the <a href="@konamicode">Konami Code</a>. Some examples are: "<em>38,38,40,40,37,39,37,39,66,65</em>", "<em>g,o,d</em>", "<em>n,o,c,l,i,p</em>", etc.', array(
       '%name' => $name,
-      '@konamicode' => 'https://www.drupal.org/docs/8/modules/konami-code/general-information-and-history',
-      '@keycodes' => 'https://www.drupal.org/docs/8/modules/konami-code/configuring-key-code-sequence',
+      '@konamicode' => 'https://github.com/backdrop-contrib/konamicode/wiki/General-Information-and-History',
+      '@keycodes' => 'https://github.com/backdrop-contrib/konamicode/wiki/Configuring-Key-Code-Sequence',
     )),
   ];
   $form['replaceImages']['konamicode_replaceImages_integrations'] = [
@@ -289,8 +289,8 @@ function konamicode_admin_settings($form, &$form_state) {
     ?? '',
     '#description' => t('The <a href="@keycodes">key code sequence</a> used to activate the %name action, seperated by commas. Provide either the key code integer, or the character of the key. Defaults to the <a href="@konamicode">Konami Code</a>. Some examples are: "<em>38,38,40,40,37,39,37,39,66,65</em>", "<em>g,o,d</em>", "<em>n,o,c,l,i,p</em>", etc.', array(
       '%name' => $name,
-      '@konamicode' => 'https://www.drupal.org/docs/8/modules/konami-code/general-information-and-history',
-      '@keycodes' => 'https://www.drupal.org/docs/8/modules/konami-code/configuring-key-code-sequence',
+      '@konamicode' => 'https://github.com/backdrop-contrib/konamicode/wiki/General-Information-and-History',
+      '@keycodes' => 'https://github.com/backdrop-contrib/konamicode/wiki/Configuring-Key-Code-Sequence',
     )),
   ];
 
@@ -312,8 +312,8 @@ function konamicode_admin_settings($form, &$form_state) {
     '#default_value' => config_get('konamicode.settings', 'konamicode_katamari_keycode_sequence') ?? '',
     '#description' => t('The <a href="@keycodes">key code sequence</a> used to activate the %name action, seperated by commas. Provide either the key code integer, or the character of the key. Defaults to the <a href="@konamicode">Konami Code</a>. Some examples are: "<em>38,38,40,40,37,39,37,39,66,65</em>", "<em>g,o,d</em>", "<em>n,o,c,l,i,p</em>", etc.', array(
       '%name' => $name,
-      '@konamicode' => 'https://www.drupal.org/docs/8/modules/konami-code/general-information-and-history',
-      '@keycodes' => 'https://www.drupal.org/docs/8/modules/konami-code/configuring-key-code-sequence',
+      '@konamicode' => 'https://github.com/backdrop-contrib/konamicode/wiki/General-Information-and-History',
+      '@keycodes' => 'https://github.com/backdrop-contrib/konamicode/wiki/Configuring-Key-Code-Sequence',
     )),
   ];
 
@@ -336,8 +336,8 @@ function konamicode_admin_settings($form, &$form_state) {
     '',
     '#description' => t('The <a href="@keycodes">key code sequence</a> used to activate the %name action, seperated by commas. Provide either the key code integer, or the character of the key. Defaults to the <a href="@konamicode">Konami Code</a>. Some examples are: "<em>38,38,40,40,37,39,37,39,66,65</em>", "<em>g,o,d</em>", "<em>n,o,c,l,i,p</em>", etc.', array(
       '%name' => $name,
-      '@konamicode' => 'https://www.drupal.org/docs/8/modules/konami-code/general-information-and-history',
-      '@keycodes' => 'https://www.drupal.org/docs/8/modules/konami-code/configuring-key-code-sequence',
+      '@konamicode' => 'https://github.com/backdrop-contrib/konamicode/wiki/General-Information-and-History',
+      '@keycodes' => 'https://github.com/backdrop-contrib/konamicode/wiki/Configuring-Key-Code-Sequence',
     )),
   ];
   $form['snowfall']['konamicode_snowfall_flake_count'] = [
@@ -401,8 +401,8 @@ function konamicode_admin_settings($form, &$form_state) {
     '#default_value' => config_get('konamicode.settings', 'konamicode_gg_keycode_sequence') ?? '',
     '#description' => t('The <a href="@keycodes">key code sequence</a> used to activate the %name action, seperated by commas. Provide either the key code integer, or the character of the key. Defaults to the <a href="@konamicode">Konami Code</a>. Some examples are: "<em>38,38,40,40,37,39,37,39,66,65</em>", "<em>g,o,d</em>", "<em>n,o,c,l,i,p</em>", etc.', array(
       '%name' => $name,
-      '@konamicode' => 'https://www.drupal.org/docs/8/modules/konami-code/general-information-and-history',
-      '@keycodes' => 'https://www.drupal.org/docs/8/modules/konami-code/configuring-key-code-sequence',
+      '@konamicode' => 'https://github.com/backdrop-contrib/konamicode/wiki/General-Information-and-History',
+      '@keycodes' => 'https://github.com/backdrop-contrib/konamicode/wiki/Configuring-Key-Code-Sequence',
     )),
   ];
 
@@ -424,8 +424,8 @@ function konamicode_admin_settings($form, &$form_state) {
     '#default_value' => config_get('konamicode.settings', 'konamicode_browserponies_keycode_sequence') ?? '',
     '#description' => t('The <a href="@keycodes">key code sequence</a> used to activate the %name action, seperated by commas. Provide either the key code integer, or the character of the key. Defaults to the <a href="@konamicode">Konami Code</a>. Some examples are: "<em>38,38,40,40,37,39,37,39,66,65</em>", "<em>g,o,d</em>", "<em>n,o,c,l,i,p</em>", etc.', array(
       '%name' => $name,
-      '@konamicode' => 'https://www.drupal.org/docs/8/modules/konami-code/general-information-and-history',
-      '@keycodes' => 'https://www.drupal.org/docs/8/modules/konami-code/configuring-key-code-sequence',
+      '@konamicode' => 'https://github.com/backdrop-contrib/konamicode/wiki/General-Information-and-History',
+      '@keycodes' => 'https://github.com/backdrop-contrib/konamicode/wiki/Configuring-Key-Code-Sequence',
     )),
   ];
   $form['browserponies']['konamicode_browserponies_baseurl'] = [
