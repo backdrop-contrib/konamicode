@@ -5,7 +5,7 @@
   $.extend({
     konami: function (callback, sequence) {
       sequence = typeof sequence !== 'undefined' ? sequence : [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
-      console.log('Registered Konami Code listener for sequence:', sequence);
+      //console.log('Registered Konami Code listener for sequence:', sequence);
       konamiListeners.push({ 'callback': callback, 'sequence': sequence });
     }
   });
@@ -19,7 +19,7 @@
       if (progress.length >= listener.sequence.length) {
         // Create a target sequence that is the same length as the progress.
         var target = progress.slice(progress.length - listener.sequence.length);
-        console.log('Progress:', progress, 'Target:', target);
+        //console.log('Progress:', progress, 'Target:', target);
         // Check if the result is the same.
         var equals = true;
         for (var i = 0; i < target.length; i++) {
@@ -29,7 +29,7 @@
           }
         }
         if (equals) {
-          console.log('Konami Code sequence matched for listener:', listener.sequence);
+          //console.log('Konami Code sequence matched for listener:', listener.sequence);
           // Reset the progress and invoke the listener.
           progress = [];
           listener.callback();
@@ -49,7 +49,7 @@
  */
 Backdrop.behaviors.konamicode = {
   attach: function (context, settings) {
-    console.log('Konami Code settings loaded:', settings.konamicode);
+    //console.log('Konami Code settings loaded:', settings.konamicode);
     // Multiple actions can take place. Defaults to just Image Attack.
     jQuery.each(settings.konamicode || { imageSpawn: true }, function (action, code) {
       var sequence;
@@ -62,12 +62,12 @@ Backdrop.behaviors.konamicode = {
         return;
       }
 
-      console.log('Listening for action:', action, 'with sequence:', sequence);
+      //console.log('Listening for action:', action, 'with sequence:', sequence);
       // Register the Konami Code event.
       jQuery('body').once('konamicode' + action, function () {
-        console.log('Konami Code event registered for action:', action);
+        //console.log('Konami Code event registered for action:', action);
         jQuery.konami(function () {
-          console.log('Konami Code triggered for action:', action);
+          //console.log('Konami Code triggered for action:', action);
           // Activate the event.
           if (Backdrop['konamicode_' + action]) {
             Backdrop['konamicode_' + action]();
@@ -209,7 +209,7 @@ Backdrop.konamicode_asteroids = function() {
 Backdrop.konamicode_replaceImages = function () {
   const settings = Backdrop.settings.konamicode?.replaceImages;
 
-  console.log('Replace Images settings:', settings);
+  //console.log('Replace Images settings:', settings);
 
   if (!settings || !settings.integrations) {
     console.error('Replace Images settings are missing or not configured properly.');
@@ -239,7 +239,7 @@ Backdrop.konamicode_replaceImages = function () {
     enabled.push('https://placecats.com/');
   }
 
-  console.log('Enabled integrations:', enabled);
+  //console.log('Enabled integrations:', enabled);
 
   // Replace every image element on the page.
   jQuery('img').each(function () {
@@ -286,7 +286,7 @@ Backdrop.konamicode_snowfall = function() {
 
   // Load the Snowfall jQuery plugin.
   jQuery.getScript(path, function() {
-    console.log('Snowfall script loaded successfully from:', path);
+    //console.log('Snowfall script loaded successfully from:', path);
 
     // Invoke the plugin on the document object with default or custom settings.
     jQuery(document).snowfall({
@@ -345,7 +345,7 @@ Backdrop.konamicode_gg = function () {
 Backdrop.konamicode_browserponies = function () {
   const settings = Backdrop.settings.konamicode?.browserponies;
 
-  console.log('Browser Ponies settings:', settings);
+  //console.log('Browser Ponies settings:', settings);
 
   if (!settings) {
     console.error('Browser Ponies settings are missing.');
@@ -379,10 +379,10 @@ Backdrop.konamicode_browserponies = function () {
 
   // Dynamically load the Browser Ponies script and configuration.
   jQuery.getScript(configUrl, function () {
-    console.log('BrowserPonies base configuration loaded.');
+    //console.log('BrowserPonies base configuration loaded.');
 
     jQuery.getScript(scriptUrl, function () {
-      console.log('BrowserPonies script loaded.');
+      //console.log('BrowserPonies script loaded.');
 
       if (typeof BrowserPonies === 'undefined') {
         console.error('BrowserPonies library did not load correctly.');
@@ -406,8 +406,8 @@ Backdrop.konamicode_browserponies = function () {
         spawn: spawnConfig, // Use the mapped spawn configuration.
       });
 
-      console.log('Browser Ponies initialized successfully with spawn config:', spawnConfig);
-      console.log('Autostart is enabled. Starting Browser Ponies...');
+      //console.log('Browser Ponies initialized successfully with spawn config:', spawnConfig);
+      //console.log('Autostart is enabled. Starting Browser Ponies...');
       BrowserPonies.start();
     });
   });
