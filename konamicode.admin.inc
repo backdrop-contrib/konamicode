@@ -11,6 +11,8 @@ function konamicode_admin_settings($form, &$form_state) {
   $form = [];
   $form['#config'] = 'konamicode.settings';
 
+  $name = 'Konami Code';
+
   // Main toggle for enabling/disabling the module.
   $form['konamicode_enabled'] = [
     '#type' => 'checkbox',
