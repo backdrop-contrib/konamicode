@@ -54,7 +54,6 @@ function konamicode_init() {
     'cornify' => [
       'enabled' => 'konamicode_cornify_enabled',
       'keycode' => 'konamicode_cornify_keycode_sequence',
-      'message' => 'konamicode_cornify_message',
     ],
     'geocitiesizer' => [
       'enabled' => 'konamicode_geocitiesizer_enabled',
@@ -114,6 +113,14 @@ function konamicode_init() {
       'rarity' => 'konamicode_browserponies_rarity',
       'twilightsparkle' => 'konamicode_browserponies_twilightsparkle',
     ],
+    'cheetosfont' => [
+      'enabled' => 'konamicode_cheetosfont_enabled',
+      'keycode' => 'konamicode_cheetosfont_keycode_sequence',
+    ],
+    'airplane' => [
+      'enabled' => 'konamicode_airplane_enabled',
+      'keycode' => 'konamicode_airplane_keycode_sequence',
+    ],
   ];
 
   if ($config->get('konamicode_fliptext_enabled')) {
@@ -131,6 +138,16 @@ function konamicode_init() {
   if ($config->get('konamicode_gg_enabled')) {
     $settings['gg'] = backdrop_get_path('module', 'konamicode');
   }
+
+  if ($config->get('konamicode_cheetosfont_enabled')) {
+    backdrop_add_css(backdrop_get_path('module', 'konamicode') .
+  '/css/fonts/cheetosfont.css');
+  }
+
+  if ($config->get('konamicode_airplane_enabled')) {
+    backdrop_add_css(backdrop_get_path('module', 'konamicode') . '/css/airplane.css');
+  }
+
 
   // Loop through actions and prepare JavaScript settings.
   foreach ($actions as $action => $keys) {
@@ -194,16 +211,5 @@ function konamicode_menu() {
   ];
 
   return $items;
-}
-
-
-/**
- * Implements hook_konamicode_GG().
- */
-function konamicode_konamicode_gg() {
-  $settings = array(
-    'gg' => backdrop_get_path('module', 'konamicode'),
-  );
-  backdrop_add_js($settings, array('type' => 'setting', 'scope' => JS_DEFAULT));
 }
 

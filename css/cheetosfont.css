@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'OtherHand';
+  src: url('../fonts/OtherHand.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Default: do nothing until triggered */
+html.cheetosfont-active {
+  font-family: 'OtherHand', sans-serif !important;
+}

@@ -542,5 +542,54 @@ function konamicode_admin_settings($form, &$form_state) {
     '#default_value' => config_get('konamicode.settings','konamicode_browserponies_twilightsparkle'),
     '#required' => TRUE,
   ];
+
+  // Cheetos Font
+  $form['cheetosfont'] = [
+    '#type' => 'fieldset',
+    '#title' => t('Cheetos Font'),
+    '#group' => 'konamicode_actions',
+    '#description' => t('Settings associated with the <a href="@cheetosfont">Cheetos Font</a> action.  The first font fully designed with the other hand.', array(
+      '%name' => $name,
+      '@cheetosfont' => 'https://www.cheetos.com/otherhand',
+    )),
+  ];
+  $form['cheetosfont']['konamicode_cheetosfont_enabled'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Enabled'),
+    '#default_value' => config_get('konamicode.settings', 'konamicode_cheetosfont_enabled') ?? 0,
+  ];
+  $form['cheetosfont']['konamicode_cheetosfont_keycode_sequence'] = [
+    '#type' => 'textfield',
+    '#title' => t('Key code sequence'),
+    '#default_value' => config_get('konamicode.settings', 'konamicode_cheetosfont_keycode_sequence') ?? '',
+    '#description' => t('The <a href="@keycodes">key code sequence</a> used to activate the %name action, seperated by commas. Provide either the key code integer, or the character of the key. Defaults to the <a href="@konamicode">Konami Code</a>. Some examples are: "<em>38,38,40,40,37,39,37,39,66,65</em>", "<em>g,o,d</em>", "<em>n,o,c,l,i,p</em>", etc.', array(
+      '%name' => $name,
+      '@konamicode' => 'https://github.com/backdrop-contrib/konamicode/wiki/General-Information-and-History',
+      '@keycodes' => 'https://github.com/backdrop-contrib/konamicode/wiki/Configuring-Key-Code-Sequence',
+    )),
+  ];
+
+  // Airplane settings
+  $form['airplane'] = [
+    '#type' => 'fieldset',
+    '#title' => t('Airplane'),
+    '#group' => 'konamicode_actions',
+    '#description' => t('Settings associated with the Airplane action.'),
+  ];
+  $form['airplane']['konamicode_airplane_enabled'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Enabled'),
+    '#default_value' => config_get('konamicode.settings', 'konamicode_airplane_enabled') ?? 0,
+  ];
+  $form['airplane']['konamicode_airplane_keycode_sequence'] = [
+    '#type' => 'textfield',
+    '#title' => t('Key code sequence'),
+    '#default_value' => config_get('konamicode.settings', 'konamicode_airplane_keycode_sequence') ?? '',
+    '#description' => t('The <a href="@keycodes">key code sequence</a> used to activate the %name action, seperated by commas. Provide either the key code integer, or the character of the key. Defaults to the <a href="@konamicode">Konami Code</a>. Some examples are: "<em>38,38,40,40,37,39,37,39,66,65</em>", "<em>g,o,d</em>", "<em>n,o,c,l,i,p</em>", etc.', array(
+      '%name' => $name,
+      '@konamicode' => 'https://github.com/backdrop-contrib/konamicode/wiki/General-Information-and-History',
+      '@keycodes' => 'https://github.com/backdrop-contrib/konamicode/wiki/Configuring-Key-Code-Sequence',
+    )),
+  ];
   return system_settings_form($form);
 }
