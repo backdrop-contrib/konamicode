@@ -1,0 +1,99 @@
+/* Base airplane container */
+#konami-airplane-wrapper {
+  position: fixed;
+  left: -80px; /* Start off-screen */
+  top: 10vh; /* Start near the top-left */
+  width: 80px;
+  height: 80px;
+  z-index: 9999;
+}
+
+/* Style the SVG */
+#konami-airplane {
+  width: 200px;
+  height: 200px;
+}
+
+/* Looping flight animation */
+#konami-airplane-wrapper.fly-loop {
+  animation: fly-in-circles 8s linear forwards;
+}
+
+/* Landing animation */
+#konami-airplane-wrapper.land {
+  animation: land-bottom-right 2s forwards;
+}
+
+/* Exit animation (taxi off-screen) */
+#konami-airplane-wrapper.exit {
+  animation: taxi-off 2s forwards;
+}
+
+/* Keyframes for looping circular motion */
+@keyframes fly-in-circles {
+  0% {
+    left: -80px;
+    top: 10vh;
+    transform: rotate(0deg) translate(0, 0);
+  }
+  25% {
+    left: 25vw;
+    top: 20vh;
+    transform: rotate(20deg) translate(30px, 10px);
+  }
+  50% {
+    left: 50vw;
+    top: 40vh;
+    transform: rotate(-20deg) translate(20px, -20px);
+  }
+  75% {
+    left: 75vw;
+    top: 60vh;
+    transform: rotate(20deg) translate(-20px, 10px);
+  }
+  100% {
+    left: 80vw;
+    top: 80vh;
+    transform: rotate(5deg) translate(0, 0);
+  }
+}
+
+/* Landing animation (slows down & lands) */
+@keyframes land-bottom-right {
+  0% {
+    left: 80vw;
+    top: 80vh;
+    transform: rotate(5deg);
+  }
+  100% {
+    left: 85vw;
+    top: 85vh;
+    transform: rotate(0deg); /* Slight tilt on landing */
+  }
+}
+
+/* Exit animation (taxiing off-screen) */
+@keyframes taxi-off {
+  0% {
+    left: 85vw; /* Start where the landing ends */
+    top: 85vh;
+    transform: rotate(-15deg); /* Maintain tail-down position */
+  }
+  100% {
+    left: 110vw; /* Move off-screen smoothly */
+    top: 85vh;
+    transform: rotate(-15deg); /* Maintain tail-down position */
+  }
+}
+
+#konami-airplane-wrapper.land::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.3);
+  left: -20px;
+  top: 50%;
+  border-radius: 50%;
+  filter: blur(5px);
+}
